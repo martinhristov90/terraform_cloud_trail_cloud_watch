@@ -1,0 +1,23 @@
+{
+    "Version": "2008-10-17",
+    "Statement": [
+      {
+        "Sid": "Put bucket policy needed for trails",
+        "Effect": "Allow",
+        "Principal": {
+          "AWS": "${cloud_trail_service_account_arn}"
+        },
+        "Action": "s3:PutObject",
+        "Resource": "arn:aws:s3:::marti-logs-bucket/*"
+      },
+      {
+        "Sid": "Get bucket policy needed for trails",
+        "Effect": "Allow",
+        "Principal": {
+          "AWS": "${cloud_trail_service_account_arn}"
+        },
+        "Action": "s3:GetBucketAcl",
+        "Resource": "arn:aws:s3:::marti-logs-bucket"
+      }
+    ]
+  }

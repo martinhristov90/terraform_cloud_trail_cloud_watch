@@ -1,0 +1,27 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+  
+        "Sid": "CloudTrailCreateLogStream",
+        "Effect": "Allow",
+        "Action": [
+          "logs:CreateLogStream"
+        ],
+        "Resource": [
+          "${log_group_arn}"
+        ]
+  
+      },
+      {
+        "Sid": "CloudTrailPutLogEventsToCloudWatch",
+        "Effect": "Allow",
+        "Action": [
+          "logs:PutLogEvents"
+        ],
+        "Resource": [
+          "${log_group_arn}"
+        ]
+      }
+    ]
+  }
